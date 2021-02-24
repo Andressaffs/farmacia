@@ -27,15 +27,8 @@ public class Produtos {
 	private long id;
 
 	@NotNull
-	@Size(min = 5, max = 500)
-	private String titulo;
-
-	@NotNull
-	@Size(min = 5, max = 500)
-	private String texto;
-
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date date = new java.sql.Date(System.currentTimeMillis());
+	@Size(min = 3, max = 200)
+	private String nome;
 	
 	@ManyToOne
 	@JsonIgnoreProperties("produtos")
@@ -49,28 +42,12 @@ public class Produtos {
 		this.id = id;
 	}
 
-	public String getTitulo() {
-		return titulo;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
-
-	public String getTexto() {
-		return texto;
-	}
-
-	public void setTexto(String texto) {
-		this.texto = texto;
-	}
-
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public Categoria getCategoria() {
